@@ -1,4 +1,4 @@
-# Interview Questions for Javascript ![Js logo](https://referralrock.com/wp-content/uploads/2018/08/javascript-logo_small.png)
+# Interview Questions for Javascript 
 
 1. What is _CallBack Hell_? How can we avoid callback hell in Node JS?
 

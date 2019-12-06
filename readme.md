@@ -1,4 +1,4 @@
-# Interview Questions for Javascript 
+# Interview Questions for Javascript
 
 1. What is _CallBack Hell_? How can we avoid callback hell in Node JS?
 
@@ -94,6 +94,7 @@ const getPosition = () => {
 ```
 
 - Use Async/await - Using Async, Await we can further reduce the complexity of the code, making it much easier to understand.
+
 ```
     const getPosition = () => {
       const promise = new Promise((resolve, reject) => {
@@ -133,13 +134,10 @@ const getPosition = () => {
     console.log("Last statement");
 ```
 
-
 2. How do we change Node versions instantly without _reinstalling_ Node JS?
 
+3) How can you build large scalable applications using Node JS? When not to use Node JS? Explain with a scenario.
 
+4) Explain about _EventEmitter_ in Node JS withan Example Code.
 
-3. How can you build large scalable applications using Node JS? When not to use Node JS? Explain with a scenario.
-
-4. Explain about _EventEmitter_ in Node JS withan Example Code.
-
-5. Explain about _stub_ with an example code.
+5) Explain about _stub_ with an example code.

@@ -136,7 +136,27 @@ const getPosition = () => {
 
 2. How do we change Node versions instantly without _reinstalling_ Node JS?
 
+We can use nvm - Node Version Manager, which is a simple bash script to manage multiple active node.js versions. 
+The first step is to install nvm.
+
+Once that's done, we can use the below commands as per the requirement - 
+- nvm ls-remote : shows the available lts versions of node.js
+- nvm ls : installed versions on the machine
+- nvm install node or nvm install 13.2.0 (for a specific version) : installs the latest version of node.js or the specified version
+- nvm use node or nvm use 13.1.0 : allows you to use a specific version.
+- nvm alias default version : to set a certain version as default for use.
+
+
 3) How can you build large scalable applications using Node JS? When not to use Node JS? Explain with a scenario.
+
+Node Js can be used to build data intensive, large scalable applications for 2 main reasons -
+- NodeJs is single threaded and asynchronous in nature, so a single thread can be used to handle multiple requests. When one request is being executed for example if we are querying a database, the same thread can be used to handle some other request. When we have the result of the query available, it is pushed into Event Queue which is pushhed into CallStack by event loop when callstack is free.
+By doing so, we make the code execution non-blocking. 
+
+- Node JS is single threaded which makes it extremely scalable for data intensive applications. Frameworks like ASP.net or Django will need to use multiple servers to handle the same load as they work on multi-threading. After a point, when all threads are busy, either the requests need to wait or we need to use more servers to balance the load. 
+
+Node Js should not be used to build CPU intensive apps like image manipulation service, or video encoding as this requires more operations to perform computations and much fewer operations to access file system or perform network calls. Since, Node js is single-threaded, when one request is being processed, the other request will ahve to wait.
+
 
 4) Explain about _EventEmitter_ in Node JS withan Example Code.
 

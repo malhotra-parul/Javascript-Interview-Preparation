@@ -1,6 +1,6 @@
 # Interview Questions for Javascript
 
-1. What is _CallBack Hell_? How can we avoid callback hell in Node JS?
+## 1. What is _CallBack Hell_? How can we avoid callback hell in Node JS?
 
 Callback functions are functions passed as arguments to another function. Callbacks are used to make Javascript calls asynchronous in nature. By default, Javascript will run the code line by line from top to bottom. However, when it encounters a function passed as an argument to another function i.e. a **Callback**, it offloads the execution part to the hosting environment(which can be a browser or nodeJs) while it itself continues with synchronous execution.
 
@@ -134,7 +134,7 @@ const getPosition = () => {
     console.log("Last statement");
 ```
 
-2. How do we change Node versions instantly without _reinstalling_ Node JS?
+## 2. How do we change Node versions instantly without _reinstalling_ Node JS?
 
 We can use nvm - Node Version Manager, which is a simple bash script to manage multiple active node.js versions. 
 The first step is to install nvm.
@@ -147,7 +147,7 @@ Once that's done, we can use the below commands as per the requirement -
 - nvm alias default version : to set a certain version as default for use.
 
 
-3) How can you build large scalable applications using Node JS? When not to use Node JS? Explain with a scenario.
+## 3) How can you build large scalable applications using Node JS? When not to use Node JS? Explain with a scenario.
 
 Node Js can be used to build data intensive, large scalable applications for 2 main reasons -
 - NodeJs is single threaded and asynchronous in nature, so a single thread can be used to handle multiple requests. When one request is being executed for example if we are querying a database, the same thread can be used to handle some other request. When we have the result of the query available, it is pushed into Event Queue which is pushhed into CallStack by event loop when callstack is free.
@@ -157,7 +157,8 @@ By doing so, we make the code execution non-blocking.
 
 Node Js should not be used to build CPU intensive apps like image manipulation service, or video encoding as this requires more operations to perform computations and much fewer operations to access file system or perform network calls. Since, Node js is single-threaded, when one request is being processed, the other request will ahve to wait.
 
+## 4) Explain about _EventEmitter_ in Node JS withan Example Code.
 
-4) Explain about _EventEmitter_ in Node JS withan Example Code.
 
-5) Explain about _stub_ with an example code.
+
+## 5) Explain about _stub_ with an example code.

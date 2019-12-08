@@ -147,7 +147,7 @@ Once that's done, we can use the below commands as per the requirement -
 - nvm alias default version : to set a certain version as default for use.
 
 
-## 3) How can you build large scalable applications using Node JS? When not to use Node JS? Explain with a scenario.
+## 3. How can you build large scalable applications using Node JS? When not to use Node JS? Explain with a scenario.
 
 Node Js can be used to build data intensive, large scalable applications for 2 main reasons -
 - NodeJs is single threaded and asynchronous in nature, so a single thread can be used to handle multiple requests. When one request is being executed for example if we are querying a database, the same thread can be used to handle some other request. When we have the result of the query available, it is pushed into Event Queue which is pushhed into CallStack by event loop when callstack is free.
@@ -157,8 +157,25 @@ By doing so, we make the code execution non-blocking.
 
 Node Js should not be used to build CPU intensive apps like image manipulation service, or video encoding as this requires more operations to perform computations and much fewer operations to access file system or perform network calls. Since, Node js is single-threaded, when one request is being processed, the other request will ahve to wait.
 
-## 4) Explain about _EventEmitter_ in Node JS withan Example Code.
+## 4. Explain about _EventEmitter_ in Node JS withan Example Code.
 
+Node.JS api has an asynchronous architecture that is built around objects(emitter) that emits certain events which causes a certain function(listeners) to be executed.
 
+All objects that emit a.k.a emitter are instances of class "EventEmitter". The object, emitter has one or more functions attached to them via emitter.on() function that takes two or more arguments- first the eventName and second the function to be executed when the event is raised.
 
-## 5) Explain about _stub_ with an example code.
+Events are raised using the function emitter.emit() that takes the eventName as the argument.
+Their order is extremely important. If an event is emiited before creating the listener to it, the function won't get executed and basically nothing will happen.
+
+For example in the code below, we first require events module which returns an EventEmitter class. We create an object of this class to run the functions, emitter.on() and emitter.emit().
+```
+const EventEmitter = require('events');
+const emitter = new EventEmitter();
+
+emitter.on('messageLoaded', function(){
+    console.log('Event executed');
+});
+
+emitter.emit('messageLoaded');`
+```
+
+## 5. Explain about _stub_ with an example code.

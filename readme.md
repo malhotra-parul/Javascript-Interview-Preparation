@@ -157,7 +157,7 @@ By doing so, we make the code execution non-blocking.
 
 Node Js should not be used to build CPU intensive apps like image manipulation service, or video encoding as this requires more operations to perform computations and much fewer operations to access file system or perform network calls. Since, Node js is single-threaded, when one request is being processed, the other request will ahve to wait.
 
-## 4. Explain about _EventEmitter_ in Node JS withan Example Code.
+## 4. Explain about _EventEmitter_ in Node JS with an Example Code.
 
 Node.JS api has an asynchronous architecture that is built around objects(emitter) that emits certain events which causes a certain function(listeners) to be executed.
 
@@ -170,12 +170,12 @@ For example in the code below, we first require events module which returns an E
 ```
 const EventEmitter = require('events');
 const emitter = new EventEmitter();
-
-emitter.on('messageLoaded', function(){
-    console.log('Event executed');
+emitter.on('messageLoaded', (arg) => {
+    console.log('Event executed', arg);
 });
-
-emitter.emit('messageLoaded');`
+emitter.emit('messageLoaded', {id: 1, url: "http://parul.codes"});
 ```
 
 ## 5. Explain about _stub_ with an example code.
+
+
